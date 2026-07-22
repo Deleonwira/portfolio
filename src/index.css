@@ -1,111 +1,166 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/* ── Steam Anime Cosmic Theme Tokens ── */
+@theme {
+  --color-primary: #1e75ff;
+  --color-primary-light: #38bdf8;
+  --color-primary-dark: #0f4bb8;
+  --color-bg-base: #040914;
+  --color-bg-card: rgba(8, 20, 48, 0.45);
+  --color-bg-card-hover: rgba(14, 32, 75, 0.65);
+  --color-border-glass: rgba(56, 189, 248, 0.22);
+  --color-border-glass-hover: rgba(56, 189, 248, 0.45);
+  --color-text-primary: #e2f1ff;
+  --color-text-secondary: rgba(226, 241, 255, 0.75);
+  --color-text-muted: rgba(180, 210, 255, 0.5);
+  --color-accent-cyan: #00f2fe;
+  --color-accent-sparkle: #70e1ff;
+  --color-glow-blue: rgba(30, 117, 255, 0.25);
+  --color-glow-cyan: rgba(0, 242, 254, 0.35);
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-heading: 'Outfit', 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --radius-profile: 12px;
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-banner: 12px;
+
+  --shadow-glow: 0 0 25px rgba(30, 117, 255, 0.25);
+  --shadow-glow-cyan: 0 0 35px rgba(0, 242, 254, 0.35);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-twinkle: twinkle 4s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* ── Keyframes ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(0, 242, 254, 0.45); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Global Base Styles ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+/* ── Custom Steam Scrollbar ── */
+::-webkit-scrollbar {
+  width: 7px;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+::-webkit-scrollbar-track {
+  background: #02050c;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 117, 255, 0.4);
   border-radius: 4px;
-  color: var(--text-h);
+  border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.7);
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(0, 242, 254, 0.35);
+  color: #fff;
+}
+
+/* ── Steam Card & Glass Utilities ── */
+.steam-card {
+  background: rgba(8, 20, 48, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 8, 28, 0.6), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.steam-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.steam-card-hover:hover {
+  background: rgba(14, 34, 78, 0.75);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 12px 40px rgba(0, 120, 255, 0.25), inset 0 1px 2px 0 rgba(255, 255, 255, 0.15);
+}
+
+.glass-header {
+  background: rgba(6, 15, 38, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.steam-btn {
+  background: linear-gradient(180deg, rgba(30, 117, 255, 0.3) 0%, rgba(10, 50, 130, 0.5) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #e2f1ff;
+  transition: all 0.2s ease;
+}
+
+.steam-btn:hover {
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.45) 0%, rgba(30, 117, 255, 0.65) 100%);
+  border-color: rgba(0, 242, 254, 0.6);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
+  color: #ffffff;
+}
+
+/* ── Decorative Steam Banners ── */
+.steam-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(56, 189, 248, 0.5);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  font-family: monospace;
+}
+
+.glow-blue-text {
+  color: #70e1ff;
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.5);
+}
+
+.gradient-steam-title {
+  background: linear-gradient(135deg, #e2f1ff 0%, #70e1ff 50%, #1e75ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
