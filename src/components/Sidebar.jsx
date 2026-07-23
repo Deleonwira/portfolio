@@ -1,17 +1,30 @@
 import { motion } from 'framer-motion';
 import {
-  Trophy, Rocket, Monitor, Coffee, Palette, Wand2,
   GitCommitHorizontal, Atom, Layers, Moon,
   Heart,
 } from 'lucide-react';
+import {
+  ReactIcon,
+  LaravelIcon,
+  ExpressIcon,
+  JavaScriptIcon,
+  PhpIcon,
+  CodeIgniterIcon,
+  PythonIcon,
+  MySqlIcon,
+  MongoDbIcon,
+} from './icons/BrandIcons';
 
-const awards = [
-  { Icon: Trophy, title: 'Top Developer' },
-  { Icon: Rocket, title: 'Fast Shipper' },
-  { Icon: Monitor, title: 'Clean Code' },
-  { Icon: Coffee, title: 'Coffee Fueled' },
-  { Icon: Palette, title: 'Pixel Perfect' },
-  { Icon: Wand2, title: 'Tech Wizard' },
+const techStack = [
+  { Icon: ReactIcon, title: 'React.js' },
+  { Icon: LaravelIcon, title: 'Laravel' },
+  { Icon: ExpressIcon, title: 'Express.js' },
+  { Icon: JavaScriptIcon, title: 'JavaScript' },
+  { Icon: PhpIcon, title: 'PHP' },
+  { Icon: CodeIgniterIcon, title: 'CodeIgniter 4' },
+  { Icon: PythonIcon, title: 'Python' },
+  { Icon: MySqlIcon, title: 'MySQL' },
+  { Icon: MongoDbIcon, title: 'MongoDB' },
 ];
 
 const badges = [
@@ -58,23 +71,23 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Profile Awards 23 */}
+      {/* Tech Stack */}
       <div className="steam-card rounded-xl p-3.5">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs font-semibold text-cyan-300 font-[family-name:var(--font-heading)]">
-            Profile Awards <span className="text-cyan-400 font-mono">23</span>
+            Tech Stack <span className="text-cyan-400 font-mono">{techStack.length}</span>
           </span>
           <span className="text-[10px] text-cyan-400/60 font-mono">View All</span>
         </div>
 
         <div className="flex items-center gap-2 overflow-x-auto py-1">
-          {awards.map((award, i) => (
+          {techStack.map((tech, i) => (
             <div
               key={i}
-              className="w-8 h-8 rounded-md bg-sky-950/80 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shadow-[0_0_10px_rgba(56,189,248,0.2)] hover:scale-110 transition-transform cursor-pointer flex-shrink-0"
-              title={award.title}
+              className="w-8.5 h-8.5 rounded-md bg-sky-950/80 border border-cyan-400/30 flex items-center justify-center shadow-[0_0_10px_rgba(56,189,248,0.15)] hover:border-cyan-400/60 hover:scale-110 transition-transform cursor-pointer flex-shrink-0"
+              title={tech.title}
             >
-              <award.Icon size={14} />
+              <tech.Icon size={16} />
             </div>
           ))}
         </div>

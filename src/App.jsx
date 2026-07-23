@@ -4,6 +4,7 @@ import StatusBadgeCard from './components/StatusBadgeCard';
 import HeroBanner from './components/HeroBanner';
 import FavoriteGroupCard from './components/FavoriteGroupCard';
 import AboutCard from './components/AboutCard';
+import EducationCard from './components/EducationCard';
 import ProjectsSection from './components/ProjectsSection';
 import ContactCard from './components/ContactCard';
 import Sidebar from './components/Sidebar';
@@ -29,6 +30,7 @@ export default function App() {
               <HeroBanner />
               <FavoriteGroupCard />
               <AboutCard />
+              <EducationCard />
               <ProjectsSection />
               <ContactCard />
             </div>

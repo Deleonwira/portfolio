@@ -43,6 +43,12 @@ export default function AboutCard() {
             <span className="text-sky-200">React, Node.js, TailwindCSS, Laravel, Cloud APIs</span>
           </div>
           <div className="flex items-start gap-2">
+            <span className="text-cyan-400 flex-shrink-0">* Education:</span>
+            <span className="text-sky-200">
+              Politeknik Negeri Jakarta (Informatics Eng. - 5th Sem) &bull; CCIT FTUI &bull; SMK Telkom Jakarta (RPL)
+            </span>
+          </div>
+          <div className="flex items-start gap-2">
             <span className="text-cyan-400 flex-shrink-0">* Hobbies:</span>
             <span className="text-sky-200 flex items-center gap-1.5 flex-wrap">
               <Gamepad2 size={11} className="text-cyan-400 inline" /> Gaming,
