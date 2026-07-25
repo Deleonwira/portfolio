@@ -38,6 +38,7 @@ const educationList = [
 export default function EducationCard() {
   return (
     <motion.div
+      id="education"
       className="steam-card rounded-xl p-4 md:p-5 relative overflow-hidden"
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}

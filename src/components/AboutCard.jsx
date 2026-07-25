@@ -12,6 +12,7 @@ const tags = [
 export default function AboutCard() {
   return (
     <motion.div
+      id="about"
       className="steam-card rounded-xl p-4 md:p-5 relative"
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}

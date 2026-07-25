@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import {
   GitCommitHorizontal, Atom, Layers, Moon,
-  Heart,
 } from 'lucide-react';
 import {
   ReactIcon,
@@ -35,22 +34,21 @@ const badges = [
 ];
 
 const steamStats = [
-  { label: 'Projects / Games', count: '109' },
-  { label: 'Inventory / Skills', count: '24' },
-  { label: 'Screenshots', count: '68' },
-  { label: 'Videos', count: '12' },
-  { label: 'Workshop Items', count: '10' },
-  { label: 'Reviews', count: '13' },
-  { label: 'Guides', count: '30' },
-  { label: 'Artwork', count: '268' },
-  { label: 'Groups', count: '92' },
+  { label: 'Projects / Games', count: '109', href: '#projects' },
+  { label: 'Inventory / Skills', count: '24', href: '#about' },
+  { label: 'Screenshots', count: '68', href: '#projects' },
+  { label: 'Videos', count: '12', href: '#projects' },
+  { label: 'Workshop Items', count: '10', href: '#projects' },
+  { label: 'Reviews', count: '13', href: '#contact' },
+  { label: 'Guides', count: '30', href: '#education' },
+  { label: 'Artwork', count: '268', href: '#projects' },
+  { label: 'Groups', count: '92', href: '#about' },
 ];
 
-const groups = [
-  { name: 'Code & Dreams', members: '2 Members', avatar: '/images/avatar.png' },
-  { name: 'Neko Devs', members: '2,056 Members', avatar: '/images/avatar.png' },
-  { name: 'Pawsome Coder', members: '8,761 Members', avatar: '/images/avatar.png' },
-];
+const scrollTo = (id) => {
+  const el = document.querySelector(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 
 export default function Sidebar() {
   return (
@@ -77,7 +75,12 @@ export default function Sidebar() {
           <span className="text-xs font-semibold text-cyan-300 font-[family-name:var(--font-heading)]">
             Tech Stack <span className="text-cyan-400 font-mono">{techStack.length}</span>
           </span>
-          <span className="text-[10px] text-cyan-400/60 font-mono">View All</span>
+          <button
+            onClick={() => scrollTo('#about')}
+            className="text-[10px] text-cyan-400/60 font-mono hover:text-cyan-300 transition-colors cursor-pointer"
+          >
+            View All
+          </button>
         </div>
 
         <div className="flex items-center gap-2 overflow-x-auto py-1">
@@ -99,7 +102,12 @@ export default function Sidebar() {
           <span className="text-xs font-semibold text-cyan-300 font-[family-name:var(--font-heading)]">
             Badges <span className="text-cyan-400 font-mono">77</span>
           </span>
-          <span className="text-[10px] text-cyan-400/60 font-mono">Showcase</span>
+          <button
+            onClick={() => scrollTo('#projects')}
+            className="text-[10px] text-cyan-400/60 font-mono hover:text-cyan-300 transition-colors cursor-pointer"
+          >
+            Showcase
+          </button>
         </div>
 
         <div className="grid grid-cols-2 gap-2">
@@ -119,42 +127,14 @@ export default function Sidebar() {
       <div className="steam-card rounded-xl p-3.5">
         <div className="flex flex-col gap-1.5 text-xs font-mono">
           {steamStats.map((item) => (
-            <div
+            <button
               key={item.label}
-              className="flex items-center justify-between py-1 px-1.5 rounded hover:bg-sky-950/60 transition-colors cursor-pointer group"
+              onClick={() => scrollTo(item.href)}
+              className="flex items-center justify-between py-1 px-1.5 rounded hover:bg-sky-950/60 transition-colors cursor-pointer group w-full text-left"
             >
               <span className="text-cyan-300/80 group-hover:text-cyan-200">{item.label}</span>
               <span className="text-cyan-400 font-semibold">{item.count}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Groups Showcase */}
-      <div className="steam-card rounded-xl p-3.5">
-        <div className="flex items-center justify-between mb-2.5">
-          <span className="text-xs font-semibold text-cyan-300 font-[family-name:var(--font-heading)]">
-            Groups <span className="text-cyan-400 font-mono">92</span>
-          </span>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          {groups.map((group, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-2.5 p-1.5 rounded hover:bg-sky-950/50 transition-colors cursor-pointer"
-            >
-              <div className="w-7 h-7 rounded overflow-hidden border border-cyan-400/40 flex-shrink-0 bg-sky-900">
-                <img src={group.avatar} alt={group.name} className="w-full h-full object-cover" />
-              </div>
-              <div className="flex flex-col min-w-0">
-                <span className="text-[11px] font-semibold text-sky-100 truncate flex items-center gap-1">
-                  <Heart size={9} className="text-cyan-400 flex-shrink-0" />
-                  {group.name}
-                </span>
-                <span className="text-[9px] text-cyan-400/60 font-mono">{group.members}</span>
-              </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>

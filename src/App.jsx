@@ -2,7 +2,6 @@ import Background from './components/Background';
 import ProfileHeader from './components/ProfileHeader';
 import StatusBadgeCard from './components/StatusBadgeCard';
 import HeroBanner from './components/HeroBanner';
-import FavoriteGroupCard from './components/FavoriteGroupCard';
 import AboutCard from './components/AboutCard';
 import EducationCard from './components/EducationCard';
 import ProjectsSection from './components/ProjectsSection';
@@ -17,18 +16,13 @@ export default function App() {
       <Background />
 
       <div className="relative z-10 min-h-screen">
-        {/* Steam Header Banner */}
-        <ProfileHeader />
-
         {/* Main Content + Steam Sidebar */}
-        <main className="max-w-[840px] mx-auto px-4 py-3">
+        <main className="max-w-[840px] mx-auto px-4 py-6">
           <div className="flex flex-col lg:flex-row gap-4">
             {/* Left Showcase Column (~65%) */}
             <div className="flex-1 min-w-0 flex flex-col gap-4">
-              {/* Status Badge — own section */}
-              <StatusBadgeCard />
+              <ProfileHeader />
               <HeroBanner />
-              <FavoriteGroupCard />
               <AboutCard />
               <EducationCard />
               <ProjectsSection />
@@ -37,7 +31,8 @@ export default function App() {
 
             {/* Right Steam Stats Column (~35%) */}
             <div className="w-full lg:w-[230px] lg:flex-shrink-0">
-              <div className="lg:sticky lg:top-4">
+              <div className="flex flex-col gap-4 lg:sticky lg:top-4">
+                <StatusBadgeCard />
                 <Sidebar />
               </div>
             </div>

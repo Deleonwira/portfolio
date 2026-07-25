@@ -405,7 +405,7 @@ export default function ProjectsSection() {
 
   return (
     <>
-      <section className="flex flex-col gap-4">
+      <section id="projects" className="flex flex-col gap-4">
         {/* Header */}
         <div className="steam-card rounded-xl p-3.5 flex items-center justify-between">
           <h3 className="text-xs font-semibold text-cyan-300 font-[family-name:var(--font-heading)] uppercase tracking-wider flex items-center gap-2">

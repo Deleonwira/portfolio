@@ -10,9 +10,7 @@ import { GithubIcon, LinkedinIcon } from './icons/BrandIcons';
 
 export default function ProfileHeader() {
   return (
-    <section className="relative z-10 pt-6 pb-2">
-      <div className="max-w-[840px] mx-auto px-4">
-        <div className="steam-card rounded-xl p-4 md:p-5 relative overflow-hidden">
+    <div className="steam-card rounded-xl p-4 md:p-5 relative overflow-hidden">
           {/* Subtle top banner glow */}
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
 
@@ -78,14 +76,19 @@ export default function ProfileHeader() {
               <div className="flex flex-wrap items-center gap-2 mt-2">
                 <a
                   href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
                   className="steam-btn px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5"
                 >
                   <MessageCircle size={13} className="text-cyan-300" />
                   <span>Contact Me</span>
                 </a>
                 <a
-                  href="#"
-                  download
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
                   className="steam-btn px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5"
                 >
                   <Download size={13} className="text-cyan-300" />
@@ -113,7 +116,5 @@ export default function ProfileHeader() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
   );
 }
