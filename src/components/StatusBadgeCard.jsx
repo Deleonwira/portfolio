@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Wifi } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function StatusBadgeCard() {
   return (
@@ -18,15 +18,7 @@ export default function StatusBadgeCard() {
           <span className="text-sm font-semibold text-sky-100 leading-tight font-[family-name:var(--font-heading)]">
             Fullstack Web Developer
           </span>
-          <span className="text-[10px] text-cyan-400 font-mono">100 XP</span>
         </div>
-      </div>
-
-      {/* Currently Online Status */}
-      <div className="flex items-center gap-2 mt-3 text-[11px] text-cyan-300/80 font-mono">
-        <Wifi size={12} className="text-cyan-400" />
-        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping opacity-75" />
-        <span>Currently Online</span>
       </div>
     </motion.div>
   );

@@ -69,7 +69,7 @@ export default function ProfileHeader() {
 
               {/* Short Bio */}
               <p className="text-xs text-text-secondary max-w-lg leading-relaxed mt-0.5">
-                Building aesthetic web apps, crafting clean full-stack code &amp; creating pixel-perfect user experiences.
+                Fully passionate in tech especially AI. Love learning new things and still learning to be better than yesterday.
               </p>
 
               {/* Action Buttons & Links */}

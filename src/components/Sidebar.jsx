@@ -34,15 +34,11 @@ const badges = [
 ];
 
 const steamStats = [
-  { label: 'Projects / Games', count: '109', href: '#projects' },
-  { label: 'Inventory / Skills', count: '24', href: '#about' },
-  { label: 'Screenshots', count: '68', href: '#projects' },
-  { label: 'Videos', count: '12', href: '#projects' },
-  { label: 'Workshop Items', count: '10', href: '#projects' },
-  { label: 'Reviews', count: '13', href: '#contact' },
-  { label: 'Guides', count: '30', href: '#education' },
-  { label: 'Artwork', count: '268', href: '#projects' },
-  { label: 'Groups', count: '92', href: '#about' },
+  { label: 'About Me', count: 'Profile', href: '#about' },
+  { label: 'Work Experience', count: 'Career', href: '#experience' },
+  { label: 'Education', count: 'Academic', href: '#education' },
+  { label: 'Projects', count: 'Showcase', href: '#projects' },
+  { label: 'Contact', count: 'Network', href: '#contact' },
 ];
 
 const scrollTo = (id) => {
@@ -59,16 +55,6 @@ export default function Sidebar() {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      {/* Status Header */}
-      <div className="steam-card rounded-xl p-3">
-        <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-          <span className="text-xs font-semibold text-cyan-200 font-[family-name:var(--font-heading)] uppercase tracking-wider">
-            Currently Online
-          </span>
-        </div>
-      </div>
-
       {/* Tech Stack */}
       <div className="steam-card rounded-xl p-3.5">
         <div className="flex items-center justify-between mb-2">
@@ -96,8 +82,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Badges 77 */}
-      <div className="steam-card rounded-xl p-3.5">
+      {/* <div className="steam-card rounded-xl p-3.5">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs font-semibold text-cyan-300 font-[family-name:var(--font-heading)]">
             Badges <span className="text-cyan-400 font-mono">77</span>
@@ -121,7 +106,7 @@ export default function Sidebar() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Navigation & Steam Stats List */}
       <div className="steam-card rounded-xl p-3.5">

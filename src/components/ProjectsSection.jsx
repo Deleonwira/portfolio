@@ -31,7 +31,7 @@ const projects = [
       'A full-stack, browser-based Digital Image Processing platform with real-time image manipulation, computer vision, AI object detection, and custom compression codecs.',
     tags: ['JavaScript', 'Python', 'Flask', 'OpenCV', 'Canvas API', 'Vite'],
     image: '/images/photon-preview.png',
-    liveUrl: '#',
+    liveUrl: 'https://photon-project-pcd-tm31.vercel.app/#/login',
     githubUrl: 'https://github.com',
     details: {
       overview:

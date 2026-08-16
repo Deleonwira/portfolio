@@ -3,6 +3,7 @@ import ProfileHeader from './components/ProfileHeader';
 import StatusBadgeCard from './components/StatusBadgeCard';
 import HeroBanner from './components/HeroBanner';
 import AboutCard from './components/AboutCard';
+import ExperienceCard from './components/ExperienceCard';
 import EducationCard from './components/EducationCard';
 import ProjectsSection from './components/ProjectsSection';
 import ContactCard from './components/ContactCard';
@@ -24,6 +25,7 @@ export default function App() {
               <ProfileHeader />
               <HeroBanner />
               <AboutCard />
+              <ExperienceCard />
               <EducationCard />
               <ProjectsSection />
               <ContactCard />
