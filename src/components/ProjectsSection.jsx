@@ -19,6 +19,8 @@ import {
   FileArchive,
   Monitor,
   BrainCircuit,
+  ShoppingCart,
+  Smartphone,
 } from 'lucide-react';
 import { GithubIcon } from './icons/BrandIcons';
 
@@ -52,6 +54,7 @@ const projects = [
           title: 'Geometric Transformations',
           desc: 'Resize with interpolation selection (Nearest, Bilinear, Bicubic), interactive crop with draggable handles, free rotation, flip, and translation.',
         },
+        
         {
           icon: 'Zap',
           title: 'Image Enhancement',
@@ -139,6 +142,176 @@ const projects = [
       ],
     },
   },
+  {
+    id: 2,
+    title: 'Industrial Machine Selection DSS — MOORA Method',
+    shortDesc:
+      'A full-stack Decision Support System for selecting the best industrial machine from multiple alternatives using the MOORA method (Multi-Objective Optimization on the basis of Ratio Analysis).',
+    tags: ['React', 'Vite', 'PHP', 'MySQL', 'Tailwind CSS'],
+    image: '/images/moora-preview.jpg',
+    liveUrl: '#',
+    githubUrl: '#',
+    details: {
+      overview:
+        'This is a full-stack web application that helps decision makers select the most optimal industrial machine from a set of alternatives, evaluated against 10 predefined criteria. The system implements the MOORA method step-by-step and interactively, so users can follow and understand every stage of the calculation.',
+      features: [
+        {
+          icon: 'Shield',
+          title: 'User Authentication',
+          desc: 'Session-based registration & login.',
+        },
+        {
+          icon: 'Database',
+          title: 'Alternative Management',
+          desc: 'Full CRUD for industrial machine data with validation.',
+        },
+        {
+          icon: 'Cpu',
+          title: 'Step-by-Step MOORA',
+          desc: 'Transparent visualization of each calculation step (Decision Matrix, Normalization, Weighting, Yi Optimization).',
+        },
+        {
+          icon: 'BarChart3',
+          title: 'Final Ranking',
+          desc: 'Visual ranking display with highlighted top recommendation based on Yi score.',
+        },
+        {
+          icon: 'FileArchive',
+          title: 'Calculation History',
+          desc: 'Save and review previous calculation results.',
+        },
+        {
+          icon: 'Monitor',
+          title: 'PDF Export',
+          desc: 'Download a full ranking report as a PDF file using jsPDF & AutoTable.',
+        },
+      ],
+      techStack: {
+        frontend: [
+          'React ^19',
+          'Vite ^8',
+          'React Router DOM ^7',
+          'Lucide React',
+          'jsPDF + AutoTable',
+        ],
+        backend: [
+          'PHP 8.0+ (REST API)',
+          'MySQL 8.0+',
+          'PDO',
+          'PHP Session',
+        ],
+        database: ['MySQL'],
+      },
+      stats: [
+        { label: 'Evaluation Criteria', value: '10' },
+        { label: 'MOORA Steps', value: '5' },
+        { label: 'Core Formulas', value: '3' },
+        { label: 'Team Members', value: '4' },
+      ],
+      highlights: [
+        'MOORA Calculation Flow — Implements 5 sequential MOORA steps interactively: Decision Matrix, Normalization, Weighting, Yi Optimization, and Ranking.',
+        'Data Seeding — Default data seed to load 10 sample machines directly from the database.',
+        'Elegant UI — Splash screen and interactive dashboard with full calculation history.',
+      ],
+    },
+  },
+  {
+    id: 3,
+    title: 'Ogani — Fullstack E-Commerce Capstone',
+    shortDesc:
+      'A production-grade, multi-platform e-commerce system featuring a Flutter mobile app, a Spring Boot REST API, and a CodeIgniter 4 admin panel — all powered by a shared MySQL database.',
+    tags: ['Flutter', 'Spring Boot', 'CodeIgniter 4', 'MySQL', 'Java', 'Dart'],
+    image: '/images/ogani-preview.jpg',
+    liveUrl: '#',
+    githubUrl: '#',
+    details: {
+      overview:
+        'Ogani is a full-stack e-commerce capstone that simulates a real-world grocery/organic goods marketplace. Three interconnected components form a unified ecosystem: a Flutter mobile app for customers, a Spring Boot REST API for business logic & security, and a CodeIgniter 4 admin panel for back-office store management — all sharing a single MySQL database.',
+      features: [
+        {
+          icon: 'Smartphone',
+          title: 'Flutter Mobile App',
+          desc: 'Cross-platform (Android/iOS) customer shopping app with JWT auth, home screen, categories, product detail, cart, checkout, order history & tracking.',
+        },
+        {
+          icon: 'Shield',
+          title: 'JWT Authentication',
+          desc: 'Secure register & login flow with JWT bearer tokens persisted via Shared Preferences, protecting all authenticated API routes via Spring Security.',
+        },
+        {
+          icon: 'ShoppingCart',
+          title: 'Shopping Cart & Checkout',
+          desc: 'Full cart management with add/remove, quantity control, live totals, and a multi-step checkout flow with address and payment method selection.',
+        },
+        {
+          icon: 'Database',
+          title: 'Spring Boot REST API',
+          desc: '10 controller groups (Auth, Products, Categories, Orders, Wishlist, Promos, Reviews, Notifications, Users, Dashboard) secured with JWT bearer tokens.',
+        },
+        {
+          icon: 'Monitor',
+          title: 'CodeIgniter 4 Admin Panel',
+          desc: 'Server-rendered MVC dashboard for product/category/order/user/promo management with direct MySQL access and session-based admin authentication.',
+        },
+        {
+          icon: 'BarChart3',
+          title: 'Dashboard & Analytics',
+          desc: 'Admin dashboard with sales overview, recent orders, key metrics, and a dedicated Spring Boot DashboardController for aggregate statistics.',
+        },
+        {
+          icon: 'Eye',
+          title: 'Wishlist & Reviews',
+          desc: 'Users can save favourite products to a persistent wishlist and submit/read product reviews. Review moderation available in the admin panel.',
+        },
+        {
+          icon: 'Zap',
+          title: 'Promos & Notifications',
+          desc: 'Promotional offers and discount code management with a dedicated PromoController, plus an in-app notification center for real-time user alerts.',
+        },
+      ],
+      techStack: {
+        'Mobile (Flutter)': [
+          'Flutter SDK ^3.11.4',
+          'Dart',
+          'Provider ^6.1.5',
+          'HTTP ^1.6.0',
+          'Google Fonts ^8.1.0',
+          'Shared Preferences ^2.5.5',
+          'Cached Network Image ^3.4.1',
+        ],
+        'Backend API (Spring Boot)': [
+          'Spring Boot 4.1.0',
+          'Java 17',
+          'Spring Security',
+          'Spring Data JPA',
+          'JJWT 0.11.5',
+          'Lombok',
+          'MySQL Connector/J',
+          'Maven',
+        ],
+        'Admin Panel (CodeIgniter 4)': [
+          'CodeIgniter 4 ^4.7',
+          'PHP ^8.2',
+          'Composer',
+        ],
+        database: ['MySQL 8.0+'],
+      },
+      stats: [
+        { label: 'API Controllers', value: '10' },
+        { label: 'App Screens', value: '13+' },
+        { label: 'Platforms', value: '3' },
+        { label: 'Tech Stack Layers', value: '4' },
+      ],
+      highlights: [
+        'Multi-Platform Ecosystem — Flutter mobile, Spring Boot API, and CodeIgniter 4 admin panel operating as a unified, production-grade system.',
+        'JWT Security Layer — Spring Security + JJWT protecting all API routes; tokens persisted on-device via Shared Preferences.',
+        'Shared MySQL Database — Single source of truth for all three components, with the admin panel accessing it directly for back-office efficiency.',
+        'State Management — Provider package drives reactive UI across all Flutter screens without relying on heavy third-party solutions.',
+        'Complete E-Commerce Flow — From product browsing and wishlist to multi-step checkout, order tracking, reviews, and promos.',
+        'Postman Collection Included — Full API test collection with pre-configured request bodies and headers for all 10 endpoint groups.',
+      ],
+    },
+  },
 ];
 
 /* ── Icon Map ── */
@@ -155,6 +328,9 @@ const iconMap = {
   Cpu,
   Shield,
   Code2,
+  Database,
+  ShoppingCart,
+  Smartphone,
 };
 
 /* ── Detail Modal Component ── */
