@@ -54,7 +54,7 @@ const projects = [
           title: 'Geometric Transformations',
           desc: 'Resize with interpolation selection (Nearest, Bilinear, Bicubic), interactive crop with draggable handles, free rotation, flip, and translation.',
         },
-        
+
         {
           icon: 'Zap',
           title: 'Image Enhancement',
@@ -312,6 +312,90 @@ const projects = [
       ],
     },
   },
+  {
+    id: 4,
+    title: 'Notare — Notes & Activity Manager',
+    shortDesc:
+      'A clean, minimal, and fully offline Flutter mobile app combining note-taking and task management, with SQLite local storage, a Cupertino-inspired UI, and rich productivity features.',
+    tags: ['Flutter', 'Dart', 'SQLite', 'sqflite', 'intl'],
+    image: '/images/notare-preview.png',
+    liveUrl: '#',
+    githubUrl: '#',
+    details: {
+      overview:
+        'Notare is a personal productivity mobile app that merges note-taking and task management into a single, elegant experience. All data is stored locally using SQLite (sqflite), ensuring full offline support with no account required. The UI is built on a minimalist, Apple-inspired dark-neutral design system using Montserrat and Color(0xFF091413) as the primary brand color.',
+      features: [
+        {
+          icon: 'Layers',
+          title: 'Notes with Categories',
+          desc: 'Create, edit, and delete notes with title, content, color, and category. 6 predefined categories (Work, Personal, Ideas, Study, Shopping, Health) each with unique color and icon.',
+        },
+        {
+          icon: 'Eye',
+          title: 'Search & Filter',
+          desc: 'Real-time search by title or content, plus interactive chip selectors to filter notes by category. Notes displayed in a responsive 2-column grid.',
+        },
+        {
+          icon: 'Zap',
+          title: 'Undo Deletions',
+          desc: 'Accidental note deletions can be instantly recovered via a snackbar undo action, preventing data loss.',
+        },
+        {
+          icon: 'Smartphone',
+          title: 'Activity / Task Manager',
+          desc: 'Manage activities as To-Do, Event, or Reminder types with priority levels (None/Low/Medium/High), description, start & end time, and subtasks with individual completion tracking.',
+        },
+        {
+          icon: 'BarChart3',
+          title: 'Subtask Progress',
+          desc: 'Computed progress indicator tracks subtask completion per activity. Swipe to delete with confirmation dialog; mark activities complete with a single toggle.',
+        },
+        {
+          icon: 'Monitor',
+          title: 'Calendar View',
+          desc: 'Dedicated calendar screen for viewing activities by date. Navigate between days to see all scheduled tasks, events, and reminders.',
+        },
+        {
+          icon: 'Palette',
+          title: 'Animated UI & Splash Screen',
+          desc: 'Custom animated splash screen, time-aware greeting (Morning/Afternoon/Evening), elastic spring FAB animation, side drawer navigation, and smooth CupertinoPageRoute transitions.',
+        },
+        {
+          icon: 'Database',
+          title: 'SQLite Local Database',
+          desc: 'Singleton DatabaseHelper with versioned migrations managing 4 tables: notes, activities, subtasks (CASCADE), and categories — full offline, no account needed.',
+        },
+      ],
+      techStack: {
+        'Mobile (Flutter)': [
+          'Flutter SDK ^3.11.4',
+          'Dart',
+          'sqflite',
+          'path_provider',
+          'intl',
+          'cupertino_icons',
+          'Montserrat (Variable Font)',
+        ],
+        database: ['SQLite (local, on-device)'],
+      },
+      stats: [
+        { label: 'App Screens', value: '6' },
+        { label: 'DB Tables', value: '4' },
+        { label: 'Note Categories', value: '6' },
+        { label: 'Activity Types', value: '3' },
+        { label: 'Priority Levels', value: '4' },
+        { label: 'Platforms', value: '5' },
+      ],
+      highlights: [
+        'Fully Offline — All data stored locally via SQLite (sqflite); no internet connection or user account required.',
+        'Unified Productivity — Notes and task management combined in a single app with a seamless, consistent design system.',
+        'Rich Activity Model — Activities support type (To-Do/Event/Reminder), priority, subtasks, start/end time, and cascade-delete subtasks.',
+        'Animated UX — Elastic spring FAB, CupertinoPageRoute transitions, animated splash screen, and time-aware greeting messages.',
+        'Category System — 6 predefined note categories with unique colors and icons; chip-based filtering for instant navigation.',
+        'Versioned DB Migrations — Singleton DatabaseHelper with schema versioning for safe future database evolution.',
+      ],
+    },
+  },
 ];
 
 /* ── Icon Map ── */
@@ -406,11 +490,10 @@ function ProjectDetailModal({ project, onClose }) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-3 py-1.5 text-[11px] font-semibold rounded-md transition-all cursor-pointer font-[family-name:var(--font-heading)] uppercase tracking-wider ${
-                activeTab === tab.id
+              className={`px-3 py-1.5 text-[11px] font-semibold rounded-md transition-all cursor-pointer font-[family-name:var(--font-heading)] uppercase tracking-wider ${activeTab === tab.id
                   ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-400/30'
                   : 'text-cyan-400/50 hover:text-cyan-300 hover:bg-cyan-500/10 border border-transparent'
-              }`}
+                }`}
             >
               {tab.label}
             </button>
