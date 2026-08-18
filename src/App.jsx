@@ -6,6 +6,7 @@ import AboutCard from './components/AboutCard';
 import ExperienceCard from './components/ExperienceCard';
 import EducationCard from './components/EducationCard';
 import ProjectsSection from './components/ProjectsSection';
+import DocumentCard from './components/DocumentCard';
 import ContactCard from './components/ContactCard';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
@@ -28,6 +29,7 @@ export default function App() {
               <ExperienceCard />
               <EducationCard />
               <ProjectsSection />
+              <DocumentCard />
               <ContactCard />
             </div>
 

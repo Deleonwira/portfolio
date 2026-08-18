@@ -34,7 +34,7 @@ const projects = [
     tags: ['JavaScript', 'Python', 'Flask', 'OpenCV', 'Canvas API', 'Vite'],
     image: '/images/photon-preview.png',
     liveUrl: 'https://photon-project-pcd-tm31.vercel.app/#/login',
-    githubUrl: 'https://github.com',
+    githubUrl: 'https://github.com/Deleonwira/Photon-Project--PCD-',
     details: {
       overview:
         'Photon is a professional-grade web application that brings the power of desktop image editors like Photoshop into the browser. It combines a pixel-level JavaScript image processing engine with a Python/OpenCV backend for advanced computer vision operations — all wrapped in a polished, desktop-class UI with menus, toolbars, panels, and keyboard shortcuts.',
@@ -148,9 +148,9 @@ const projects = [
     shortDesc:
       'A full-stack Decision Support System for selecting the best industrial machine from multiple alternatives using the MOORA method (Multi-Objective Optimization on the basis of Ratio Analysis).',
     tags: ['React', 'Vite', 'PHP', 'MySQL', 'Tailwind CSS'],
-    image: '/images/moora-preview.jpg',
-    liveUrl: '#',
-    githubUrl: '#',
+    image: '/images/moora-preview.png',
+    liveUrl: 'https://moorasystem.netlify.app/',
+    githubUrl: 'https://github.com/Deleonwira/Project-MOORA',
     details: {
       overview:
         'This is a full-stack web application that helps decision makers select the most optimal industrial machine from a set of alternatives, evaluated against 10 predefined criteria. The system implements the MOORA method step-by-step and interactively, so users can follow and understand every stage of the calculation.',
@@ -311,6 +311,18 @@ const projects = [
         'Postman Collection Included — Full API test collection with pre-configured request bodies and headers for all 10 endpoint groups.',
       ],
     },
+    screenshots: [
+      { url: '/images/ogani-screenshot-92-1.jpeg', title: 'Home Screen', desc: 'Main landing page with categories, featured products, and special offers carousel.' },
+      { url: '/images/ogani-screenshot-93-1.jpeg', title: 'Product Categories', desc: 'Browse products by category with grid layout and search functionality.' },
+      { url: '/images/ogani-screenshot-94-1.jpeg', title: 'Shopping Cart', desc: 'Cart management with quantity control, item removal, and live total calculation.' },
+      { url: '/images/ogani-screenshot-95-1.jpeg', title: 'User Profile', desc: 'Profile page with order history, wishlist access, and account settings.' },
+      { url: '/images/ogani-screenshot-96-1.jpeg', title: 'Product Detail', desc: 'Detailed product view with images, description, reviews, and add-to-cart action.' },
+      { url: '/images/ogani-screenshot-97-1.jpeg', title: 'Checkout', desc: 'Multi-step checkout flow with address input and payment method selection.' },
+      { url: '/images/ogani-screenshot-98-1.jpeg', title: 'Order Tracking', desc: 'Real-time order status tracking with timeline and delivery updates.' },
+      { url: '/images/ogani-screenshot-99-1.jpeg', title: 'Promos & Coupons', desc: 'Browse active promotional offers and apply discount codes.' },
+      { url: '/images/ogani-screenshot-100-1.jpeg', title: 'Reviews & Ratings', desc: 'Product review system with star ratings and user feedback.' },
+      { url: '/images/ogani-screenshot-101-1.jpeg', title: 'My Orders', desc: 'Order history with status filters and reorder functionality.' },
+    ],
   },
   {
     id: 4,
@@ -318,7 +330,7 @@ const projects = [
     shortDesc:
       'A clean, minimal, and fully offline Flutter mobile app combining note-taking and task management, with SQLite local storage, a Cupertino-inspired UI, and rich productivity features.',
     tags: ['Flutter', 'Dart', 'SQLite', 'sqflite', 'intl'],
-    image: '/images/notare-preview.png',
+    image: '/images/notare-preview-mockup.jpg',
     liveUrl: '#',
     githubUrl: '#',
     details: {
@@ -395,6 +407,24 @@ const projects = [
         'Versioned DB Migrations — Singleton DatabaseHelper with schema versioning for safe future database evolution.',
       ],
     },
+    screenshots: [
+      { url: '/images/notare-screenshot-9-1.jpeg', title: 'Splash Screen', desc: 'Sleek digital note-taking and productivity tool entry.' },
+      { url: '/images/notare-screenshot-9-2.jpeg', title: 'Main Dashboard', desc: 'Centralized workspace to organize categorized notes.' },
+      { url: '/images/notare-screenshot-10-1.jpeg', title: 'Category Selection Menu', desc: 'Filter notes easily by topic like work, study, or health.' },
+      { url: '/images/notare-screenshot-10-2.jpeg', title: 'Select Category Screen', desc: 'Menu to assign specific labels to notes or tasks.' },
+      { url: '/images/notare-screenshot-11-1.jpeg', title: 'New Note Creation', desc: 'Rich text editor to write and save notes under categories.' },
+      { url: '/images/notare-screenshot-11-2.jpeg', title: 'Edit Note Screen', desc: 'Interface to modify notes, change categories, or delete them.' },
+      { url: '/images/notare-screenshot-12-1.jpeg', title: 'Slide-out Navigation', desc: 'Quick access panel to switch between dashboard and calendar.' },
+      { url: '/images/notare-screenshot-12-2.jpeg', title: 'Calendar Interface', desc: 'Scheduling tool to view and add daily events.' },
+      { url: '/images/notare-screenshot-13-1.jpeg', title: 'Date Selection Menu', desc: 'Quick navigation tool to jump to a specific month/year.' },
+      { url: '/images/notare-screenshot-13-2.jpeg', title: 'Context Menu', desc: 'Quick-action panel to add tasks, events, or reminders.' },
+      { url: '/images/notare-screenshot-14-1.jpeg', title: 'New Todo Screen', desc: 'Form to create tasks with schedules, priorities, and subtasks.' },
+      { url: '/images/notare-screenshot-14-2.jpeg', title: 'Add Subtask Dialog', desc: 'Pop-up to break down tasks into smaller steps.' },
+      { url: '/images/notare-screenshot-15-1.jpeg', title: 'Time Picker Dialog', desc: 'Interface to set precise start or end times.' },
+      { url: '/images/notare-screenshot-15-2.jpeg', title: 'Manual Time Entry', desc: 'Direct keyboard input alternative to type times quickly.' },
+      { url: '/images/notare-screenshot-16-1.jpeg', title: 'New Event Screen', desc: 'Form to schedule and detail upcoming calendar events.' },
+      { url: '/images/notare-screenshot-16-2.jpeg', title: 'New Reminder Screen', desc: 'Form to create reminders with notification timing.' }
+    ]
   },
 ];
 
@@ -419,13 +449,44 @@ const iconMap = {
 
 /* ── Detail Modal Component ── */
 function ProjectDetailModal({ project, onClose }) {
-  const [activeTab, setActiveTab] = useState('features');
+  const [activeTab, setActiveTab] = useState(project.defaultTab || 'features');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const slideVariants = {
+    enter: (dir) => ({
+      x: dir > 0 ? 80 : -80,
+      opacity: 0,
+      scale: 0.95
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.25,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    },
+    exit: (dir) => ({
+      x: dir < 0 ? 80 : -80,
+      opacity: 0,
+      scale: 0.95,
+      transition: {
+        duration: 0.2
+      }
+    })
+  };
 
   const tabs = [
     { id: 'features', label: 'Features' },
     { id: 'tech', label: 'Tech Stack' },
     { id: 'stats', label: 'Stats' },
   ];
+
+  if (project.screenshots) {
+    tabs.push({ id: 'screenshots', label: 'App Previews' });
+  }
 
   return (
     <motion.div
@@ -617,15 +678,114 @@ function ProjectDetailModal({ project, onClose }) {
               </div>
             </motion.div>
           )}
+
+          {/* App Previews Tab */}
+          {activeTab === 'screenshots' && project.screenshots && (
+            <motion.div
+              className="flex flex-col gap-4 items-center py-2"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              {/* Phone Mockup Frame */}
+              <div className="relative mx-auto w-[210px] h-[420px] rounded-[36px] border-[5px] border-[#0c192c] bg-[#02050f] shadow-[0_0_30px_rgba(34,211,238,0.25)] flex flex-col items-center justify-between p-2 overflow-hidden group/phone">
+                
+                {/* Speaker & Notch */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-3.5 bg-black rounded-full z-30 flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 bg-[#0a101f] rounded-full border border-sky-950/50" />
+                </div>
+
+                {/* Status Bar */}
+                <div className="absolute top-1 left-0 right-0 px-6 py-0.5 flex justify-between items-center text-[7px] font-mono text-cyan-400/80 z-20 select-none">
+                  <span>12:00</span>
+                  <div className="flex items-center gap-1">
+                    <span>LTE</span>
+                    <span className="w-3 h-1.5 border border-cyan-400/60 rounded-xs relative flex items-center p-[1px]">
+                      <span className="h-full w-4/5 bg-cyan-400 rounded-3xs" />
+                    </span>
+                  </div>
+                </div>
+
+                {/* Screen Content Wrapper */}
+                <div className="w-full h-full rounded-[28px] overflow-hidden bg-[#040914] relative flex items-center justify-center border border-cyan-400/10">
+                  <AnimatePresence initial={false} custom={direction} mode="wait">
+                    <motion.img
+                      key={currentSlide}
+                      src={project.screenshots[currentSlide].url}
+                      alt={project.screenshots[currentSlide].title}
+                      custom={direction}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      className="w-full h-full object-cover"
+                    />
+                  </AnimatePresence>
+
+                  {/* Left / Right Nav Overlays */}
+                  <button
+                    onClick={() => {
+                      setDirection(-1);
+                      setCurrentSlide((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
+                    }}
+                    className="absolute left-1.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-[#040914]/85 border border-cyan-500/30 text-cyan-300 flex items-center justify-center opacity-0 group-hover/phone:opacity-100 transition-all duration-300 hover:bg-cyan-500/20 active:scale-90 z-20 cursor-pointer text-sm font-bold"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    onClick={() => {
+                      setDirection(1);
+                      setCurrentSlide((prev) => (prev === project.screenshots.length - 1 ? 0 : prev + 1));
+                    }}
+                    className="absolute right-1.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-[#040914]/85 border border-cyan-500/30 text-cyan-300 flex items-center justify-center opacity-0 group-hover/phone:opacity-100 transition-all duration-300 hover:bg-cyan-500/20 active:scale-90 z-20 cursor-pointer text-sm font-bold"
+                  >
+                    ›
+                  </button>
+
+                  {/* Home Indicator Line */}
+                  <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-14 h-[3px] bg-cyan-400/40 rounded-full z-20" />
+                </div>
+              </div>
+
+              {/* Text Info (Title & Desc) */}
+              <div className="text-center px-4 min-h-[55px]">
+                <h5 className="text-[11px] font-bold text-cyan-300 uppercase tracking-wider font-[family-name:var(--font-heading)]">
+                  {project.screenshots[currentSlide].title}
+                </h5>
+                <p className="text-[10px] text-sky-200/70 mt-1 max-w-sm leading-relaxed font-mono">
+                  {project.screenshots[currentSlide].desc}
+                </p>
+              </div>
+
+              {/* Dot Indicators */}
+              <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[280px]">
+                {project.screenshots.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setDirection(idx > currentSlide ? 1 : -1);
+                      setCurrentSlide(idx);
+                    }}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === currentSlide
+                        ? 'w-4 bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.6)]'
+                        : 'w-1.5 bg-cyan-500/20 hover:bg-cyan-500/40'
+                    }`}
+                    title={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Footer Actions */}
-        <div className="px-4 py-3 border-t border-cyan-500/15 flex items-center justify-between">
+        <div className="px-4 py-3 border-t border-cyan-500/15 flex items-center justify-between font-mono">
           <div className="flex flex-wrap gap-1">
             {project.tags.slice(0, 4).map((tag) => (
               <span
                 key={tag}
-                className="px-1.5 py-0.5 text-[9px] rounded bg-sky-950 border border-cyan-400/20 text-cyan-300 font-mono"
+                className="px-1.5 py-0.5 text-[9px] rounded bg-sky-950 border border-cyan-400/20 text-cyan-300"
               >
                 {tag}
               </span>
@@ -633,24 +793,36 @@ function ProjectDetailModal({ project, onClose }) {
           </div>
 
           <div className="flex items-center gap-2">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-semibold steam-btn"
-            >
-              <GithubIcon size={12} />
-              <span>Source</span>
-            </a>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-semibold steam-btn"
-            >
-              <ExternalLink size={12} />
-              <span>Live Demo</span>
-            </a>
+            {project.githubUrl && project.githubUrl !== '#' && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-semibold steam-btn"
+              >
+                <GithubIcon size={12} />
+                <span>Source</span>
+              </a>
+            )}
+            {project.liveUrl && project.liveUrl !== '#' ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-semibold steam-btn"
+              >
+                <ExternalLink size={12} />
+                <span>Live Demo</span>
+              </a>
+            ) : project.screenshots ? (
+              <button
+                onClick={() => setActiveTab('screenshots')}
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-semibold steam-btn cursor-pointer"
+              >
+                <ImageIcon size={12} />
+                <span>App Previews</span>
+              </button>
+            ) : null}
           </div>
         </div>
       </motion.div>
@@ -691,16 +863,30 @@ export default function ProjectsSection() {
             >
               <div>
                 {/* Image Preview Container */}
-                <div className="relative h-36 rounded-lg overflow-hidden border border-cyan-400/30 mb-3 bg-sky-950">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#040914] via-transparent to-transparent opacity-80" />
+                <div className="relative h-36 rounded-lg overflow-hidden border border-cyan-400/30 mb-3 bg-[#030812] flex items-center justify-center">
+                  {project.screenshots ? (
+                    <div className="relative w-[70px] h-[122px] rounded-[18px] border-[3px] border-[#0c192c] bg-black shadow-[0_0_15px_rgba(34,211,238,0.2)] flex items-center justify-center overflow-hidden z-10 group-hover:scale-105 transition-transform duration-500 mt-2">
+                      {/* Speaker Notch */}
+                      <div className="absolute top-0.5 left-1/2 -translate-x-1/2 w-6 h-1 bg-black rounded-full z-20" />
+                      <img
+                        src={project.screenshots[0].url}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#040914] via-transparent to-transparent opacity-80" />
+                    </>
+                  )}
 
                   {/* Click hint badge */}
-                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#040914]/80 border border-cyan-400/40 text-[10px] font-mono text-cyan-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-[#040914]/80 border border-cyan-400/40 text-[10px] font-mono text-cyan-300 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                     <Eye size={11} className="text-cyan-400" />
                     <span>View Details</span>
                   </div>
@@ -729,24 +915,41 @@ export default function ProjectsSection() {
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-1 rounded hover:bg-cyan-500/20 text-cyan-300 transition-colors"
-                    title="Source Code"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <GithubIcon size={13} />
-                  </a>
-                  <a
-                    href={project.liveUrl}
-                    className="p-1 rounded hover:bg-cyan-500/20 text-cyan-300 transition-colors"
-                    title="Live Demo"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ExternalLink size={13} />
-                  </a>
+                  {project.githubUrl && project.githubUrl !== '#' && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1 rounded hover:bg-cyan-500/20 text-cyan-300 transition-colors"
+                      title="Source Code"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <GithubIcon size={13} />
+                    </a>
+                  )}
+                  {project.liveUrl && project.liveUrl !== '#' ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1 rounded hover:bg-cyan-500/20 text-cyan-300 transition-colors"
+                      title="Live Demo"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalLink size={13} />
+                    </a>
+                  ) : project.screenshots ? (
+                    <button
+                      className="p-1 rounded hover:bg-cyan-500/20 text-cyan-300 transition-colors cursor-pointer"
+                      title="App Previews"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedProject({ ...project, defaultTab: 'screenshots' });
+                      }}
+                    >
+                      <ImageIcon size={13} />
+                    </button>
+                  ) : null}
                 </div>
               </div>
             </motion.div>
@@ -754,7 +957,6 @@ export default function ProjectsSection() {
         </div>
       </section>
 
-      {/* Detail Modal */}
       <AnimatePresence>
         {selectedProject && (
           <ProjectDetailModal

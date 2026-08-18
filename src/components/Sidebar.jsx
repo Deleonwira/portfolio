@@ -34,11 +34,12 @@ const badges = [
 ];
 
 const steamStats = [
-  { label: 'About Me', count: 'Profile', href: '#about' },
-  { label: 'Work Experience', count: 'Career', href: '#experience' },
-  { label: 'Education', count: 'Academic', href: '#education' },
-  { label: 'Projects', count: 'Showcase', href: '#projects' },
-  { label: 'Contact', count: 'Network', href: '#contact' },
+  { label: 'About Me', href: '#about' },
+  { label: 'Work Experience', count: '2', href: '#experience' },
+  { label: 'Education', count: '3', href: '#education' },
+  { label: 'Projects', count: '4', href: '#projects' },
+  { label: 'Documents', count: '3', href: '#documents' },
+  { label: 'Contact', count: '1', href: '#contact' },
 ];
 
 const scrollTo = (id) => {

@@ -24,7 +24,7 @@ export default function ProfileHeader() {
             >
               <div className="w-[84px] h-[84px] md:w-[96px] md:h-[96px] rounded-lg overflow-hidden border-2 border-cyan-400/50 shadow-[0_0_20px_rgba(56,189,248,0.35)] relative group">
                 <img
-                  src="/images/avatar.png"
+                  src="/images/foto_leon.jpg"
                   alt="Leon Wira"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -54,18 +54,18 @@ export default function ProfileHeader() {
                 </span>
               </div>
 
-              {/* Decorative Steam Kaomoji Line */}
+              {/* Decorative Steam Kaomoji Line
               <div className="text-[11px] font-mono text-cyan-300/70 select-none tracking-tight flex items-center gap-1">
                 <span>·.·´¯`·.·</span>
                 <Moon size={9} className="text-cyan-400" />
                 <span>·.·´¯`·.·</span>
-              </div>
+              </div> */}
 
-              {/* Subtitle Row */}
+              {/* Subtitle Row
               <div className="text-xs text-sky-200/90 font-sans tracking-widest flex items-center gap-2 select-all">
                 <Code2 size={12} className="text-cyan-400/80" />
                 <span className="text-[10px] text-cyan-400/60 font-mono">[ fullstack architect ]</span>
-              </div>
+              </div> */}
 
               {/* Short Bio */}
               <p className="text-xs text-text-secondary max-w-lg leading-relaxed mt-0.5">
@@ -86,7 +86,7 @@ export default function ProfileHeader() {
                   <span>Contact Me</span>
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="https://drive.google.com/file/d/1LAmn2JrLKZBWcQ8N21wZbN5YRA4cmzMv/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                   className="steam-btn px-3 py-1.5 rounded text-xs font-medium flex items-center gap-1.5"

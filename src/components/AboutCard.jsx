@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Rocket, Zap, Palette, Gem, Globe, Gamepad2, Headphones, Coffee, Code2, MoveIcon, Video, Theater, Balloon, LucideBalloon } from 'lucide-react';
+import { Rocket, Zap, Palette, Gem, Globe, Gamepad2, Headphones, Coffee, Code2, MoveIcon, Video, Theater, Balloon, LucideBalloon, ChessKing } from 'lucide-react';
 
 const tags = [
   { Icon: Rocket, label: 'Fullstack' },
@@ -40,7 +40,7 @@ export default function AboutCard() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-cyan-400">* Specialty:</span>
-            <span className="text-sky-200">React.js, Node.js, Express.js, Pyhton, TailwindCSS, MySQL, MongoDB</span>
+            <span className="text-sky-200">React.js, Node.js, Express.js, Codeigniter4, Python, TailwindCSS, MySQL, MongoDB</span>
           </div>
           <div className="flex items-start gap-2">
             <span className="text-cyan-400 flex-shrink-0">* Education:</span>
@@ -55,6 +55,7 @@ export default function AboutCard() {
             <span className="text-sky-200 flex items-center gap-1.5 flex-wrap">
               <Theater size={11} className="text-cyan-400 inline" /> Movies,
               <Balloon size={11} className="text-cyan-400 inline" /> Billiard,
+              <ChessKing size={11} className="text-cyan-400 inline" /> Chess,
               <Gamepad2 size={11} className="text-cyan-400 inline" /> Gaming
             </span>
           </div>
